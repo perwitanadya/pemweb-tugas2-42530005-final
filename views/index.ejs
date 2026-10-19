@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+<h1>Daftar Menu</h1>
+
+<div class="filter">
+  <a href="/menu" class="chip <%= kategoriAktif === '' ? 'aktif' : '' %>">Semua</a>
+  <% daftarKategori.forEach(function(k) { %>
+    <a href="/menu?kategori=<%= k %>"
+       class="chip <%= kategoriAktif === k ? 'aktif' : '' %>"><%= k %></a>
+  <% }); %>
+</div>
+
+<% if (menu.length === 0) { %>
+  <p>Tidak ada menu pada kategori ini.</p>
+<% } else { %>
+  <div class="grid">
+    <% menu.forEach(function(item) { %>
+      <div class="card">
+        <img src="<%= item.foto %>" alt="<%= item.nama %>">
+        <h3><%= item.nama %></h3>
+        <p class="kategori"><%= item.kategori %></p>
+        <p class="harga">Rp <%= item.harga.toLocaleString('id-ID') %></p>
+        <a href="/menu/<%= item.id %>" class="btn">Lihat Detail</a>
+      </div>
+    <% }); %>
+  </div>
+<% } %>
+
+<%- include('partials/footer') %>

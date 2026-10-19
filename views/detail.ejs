@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<a href="/menu" class="kembali">← Kembali ke daftar</a>
+
+<div class="detail">
+  <img src="<%= item.foto %>" alt="<%= item.nama %>">
+  <div>
+    <h1><%= item.nama %></h1>
+    <p class="kategori"><%= item.kategori %></p>
+    <p class="harga">Rp <%= item.harga.toLocaleString('id-ID') %></p>
+    <p><%= item.deskripsi %></p>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

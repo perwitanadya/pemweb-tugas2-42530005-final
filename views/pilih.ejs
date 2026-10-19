@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+<h1 class="judul-menu">Mau pesan apa hari ini? 💕</h1>
+
+<div class="kategori-besar">
+  <a href="/menu?kategori=makanan" class="kategori-kartu">
+    <span>🍝</span>
+    <h3>Makanan</h3>
+    <p><%= jumlah.makanan %> menu</p>
+  </a>
+  <a href="/menu?kategori=minuman" class="kategori-kartu">
+    <span>🥤</span>
+    <h3>Minuman</h3>
+    <p><%= jumlah.minuman %> menu</p>
+  </a>
+  <a href="/menu?kategori=dessert" class="kategori-kartu">
+    <span>🍰</span>
+    <h3>Dessert</h3>
+    <p><%= jumlah.dessert %> menu</p>
+  </a>
+</div>
+
+<%- include('partials/footer') %>
